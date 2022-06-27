@@ -134,8 +134,9 @@ class Summoner {
 
     banning = () => {
         if (this.isBanned = false) {
-            this.isBanned
-            return `${nickname} has been banned`
+         this.isBanned = true
+         return this.isBanned
+            
         }
     }
 }
@@ -147,10 +148,17 @@ const magifelix = new Summoner ("Magifelix", 548, 10, 3, false)
 const ratirl = new Summoner ("RatIRL", 35, 8, 0, false)
 
 
+class Item {
+    constructor (name, cost) {
+        this.name = name
+        this.cost = cost
+    }
 
-ratirl.banning()
+}
 
-console.log(ratirl.summonerDisplay)
+const ie = new Item ("Infinity Edge",3800)
+
+const pinkward = new Item ("Vision Ward", 75)
 
 
 
