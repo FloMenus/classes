@@ -66,13 +66,13 @@
 // 3 - Video games - League of Legends
 
 class Character {
-    constructor (name, role, hp, mana, armor, mr, level = 1) {
+    constructor(name, role, hp, mana, armor, mr, level = 1) {
         this.name = name
         this.role = role
         this.hp = hp
         this.mana = mana
         this.armor = armor
-        this.mr= mr
+        this.mr = mr
         this.level = level
     }
 
@@ -84,13 +84,14 @@ class Character {
         if (this.level < 18) {
             this.level += 1
             this.hp *= 1.05
-            this.mana *=1.10
+            this.mana *= 1.10
         }
     }
 
     characterDeath = () => {
         if (this.hp <= 0)
-        mana = 0
+            mana = 0
+        return `${this.name} has been slain !`
     }
 }
 
@@ -104,7 +105,52 @@ const ezreal = new Character("ezreal", "marksman", 600, 375, 20, 25)
 
 const cassiopea = new Character("cassiopea", "mage", 550, 350, 10, 10)
 
-aatrox.levelup()
+// aatrox.levelup()
+// console.log(aatrox.displayStats())
 
-console.log (aatrox.displayStats())
+
+
+
+class Summoner {
+    constructor(nickname, level, rank, honor, isBanned) {
+        this.nickname = nickname
+        this.level = level
+        this.rank = rank
+        this.honor = honor
+        this.isBanned = isBanned
+    }
+
+
+    summonerDisplay = () => {
+      return  `Name = ${this.nickname}, Lvl = ${this.level}, Rank = ${this.rank}, Honor = ${this.honor}, Banned = ${this.isBanned}`
+    }
+    rankUp = () => {
+        this.rank += 1
+    }
+
+    rankDown = () => {
+        this.rank -= 1
+    }
+
+    banning = () => {
+        if (this.isBanned = false) {
+            this.isBanned
+            return `${nickname} has been banned`
+        }
+    }
+}
+
+const kiwilud = new Summoner ("KiwiLud", 350, 6, 4, false)
+
+const magifelix = new Summoner ("Magifelix", 548, 10, 3, false)
+
+const ratirl = new Summoner ("RatIRL", 35, 8, 0, false)
+
+
+
+ratirl.banning()
+
+console.log(ratirl.summonerDisplay)
+
+
 
